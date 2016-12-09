@@ -1,32 +1,3 @@
-//functions
-// Call the color palette modifiers in color values
-//@function theme($color) {
-//  @return map-get($color, $likert-color);
-//}
-
-// mixins
-// BEM selectors mixin
-@mixin e($element) {
-  &__#{$element} {
-    @content;
-  }
-}
-@mixin m($modifier) {
-  &--#{$modifier} {
-    @content;
-  }
-}
-
-//variables
-$likert-colors: (
-  green: map-get($foundation-palette, success),
-  darkgreen: darken(map-get($foundation-palette, success), 15),
-  yellow: map-get($foundation-palette, warning),
-  red: map-get($foundation-palette, alert),
-  darkred: darken(map-get($foundation-palette, alert), 15),
-  gray: $medium-gray
-);
-
 $brand-primary: dodgerblue;
 $brand-secondary: blueviolet;
 $brand-copy: #495058;
@@ -47,30 +18,40 @@ label, legend {
 
 legend {
   margin-bottom: 0;
-//  color: map-get($foundation-palette, success);
 }
 
+//input {
+//  &[type='text'], &[type='password'], &[type='date'], &[type='datetime'], &[type='datetime-local'], &[type='month'], &[type='week'], &[type='email'], &[type='number'], &[type='search'], &[type='tel'], &[type='time'], &[type='url'], &[type='color'] {
+//    margin-bottom: 0;
+//  }
+//}
 input, textarea {
   margin-bottom: 0 !important;
 }
 
-//.container {
-//  max-width: 960px;
+//textarea, .dropdown {
+//  margin-bottom: 0;
 //}
+
+.container {
+  max-width: 960px;
+}
 
 .top-bar {
   background-color: $brand-primary;
   margin-bottom: 0;
   color: white;
-  .subheader {
-    color: $light-gray;
-    line-height: 1;
-  }
+}
+
+.sd-course-info, .sd-prof-info {
+  color: $brand-copy-light !important;
+//  small {
+//    color: darken($brand-copy-light, 10);
+//  }
 }
 
 .sd-profile-text {
-  background: lighten($light-gray, 7);
-//  box-shadow: 0 3px 3px rgba(0,0,0,.5);
+  background: $brand-copy-light;
 }
 
 .form-container {
@@ -92,7 +73,6 @@ input, textarea {
 //    margin: .5em 0;
   }
   .response {
-//    max-width: 7em;
     font-size: .875em !important;
   }
 }
@@ -107,12 +87,10 @@ input, textarea {
 }
 
 .response {
-  min-width: 4em;
-  max-width: 8em;
+  max-width: 5em;
   padding: 0 .25em;
   margin: .125em;
-  font-size: 1rem;
-  line-height: 1;
+//  font-size: 1rem;
   & label {
     line-height: 1.25;
   }
@@ -127,39 +105,10 @@ input, textarea {
   }
 }
 
-.colored-likert {
-  @each $color, $likert-color in $likert-colors {
-  &--#{$color} {
-    color: $likert-color;
-    background: none !important;
-    @include breakpoint(medium) {
-      background: $likert-color !important;
-      color: white;
-      display: inline-block;
-      padding: 0.25rem 0.5rem;
-//      margin: -.5rem;
-      font-size: .9em;
-      line-height: 1;
-//      white-space: normal;
-//      cursor: default;
-      border-radius: 0;
-      flex-wrap: wrap;
-      }
-    }
-  }
-}
-
 .question-row  {
   padding: .5em 0;
   &:nth-of-type(even) {
     background: #f5f5f5;
-  }
-}
-.question {
-  line-height: 1;
-  margin-bottom: 1em;
-  @include breakpoint(medium) {
-    margin-bottom: 0;
   }
 }
 
@@ -240,8 +189,8 @@ option[selected] .select-paceholder {
 //    left: -.75em;
     left: 0;
     margin: auto;
-//    height: 1.5em;
-//    width: 1.5em;
+    height: 1.5em;
+    width: 1.5em;
     border: 2px solid $brand-primary;
     background: white;
     border-radius: 50%;
@@ -258,7 +207,6 @@ option[selected] .select-paceholder {
 //    margin-left: 0;
 //  }
   input {
-
     position: relative;
     height: 1.5em;
     width: 1.5em;
@@ -267,13 +215,12 @@ option[selected] .select-paceholder {
     bottom: 0;
 //    left: 0;
     &:before {
-      font-family: FontAwesome;
-      content: "\f096";
       opacity: 1;
-//      content: "";
+      content: "";
       position: absolute;
       display: block;
-//      margin: auto;
+
+      margin: auto;
       height: 1.5em;
       width: 1.5em;
       border: 2px solid $brand-primary;
@@ -281,17 +228,14 @@ option[selected] .select-paceholder {
       border-radius: 0;
     }
     &:checked:before {
-//      background: $brand-primary;
-//      content: "\2716"; //characters found at http://www.w3schools.com/charsets/ref_utf_dingbats.asp
-      text-indent: .25em;
-      content: "\f14a";
+      background: $brand-primary;
+      content: "\2716"; //characters found at http://www.w3schools.com/charsets/ref_utf_dingbats.asp
+      text-indent: .2em;
       color: white;
       line-height: 1.25;
     }
   }
 }
-
-
 
 .vertical-list  {
   margin: 0;
@@ -332,7 +276,6 @@ option[selected] .select-paceholder {
 
 .switch {
   margin: .375em 0 0 -.125em;
-//  background: map-get($foundation-palette, success);
 }
 
 .switch-paddle {

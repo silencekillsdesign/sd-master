@@ -1,5 +1,5 @@
 {
-  "name": "foundation-sites-template",
+  "name": "sd-master",
   "version": "1.0.0",
   "description": "Basic template for a new Foundation for Sites project.",
   "main": "gulpfile.js",
@@ -15,10 +15,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/silencekillsdesign/sd-master"
+    "url": "https://github.com/silencekillsdesign/sd-master.git"
   },
   "bugs": {
-    "url": "https://github.com/zurb/foundation-sites/issues",
+    "url": "https://github.com/silencekillsdesign/sd-master/issues",
     "email": "foundation@zurb.com"
   },
   "author": "ZURB <foundation@zurb.com>",

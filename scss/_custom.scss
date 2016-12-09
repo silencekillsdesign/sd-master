@@ -3,202 +3,197 @@
 //@function theme($color) {
 //  @return map-get($color, $likert-color);
 //}
-
 $font-path: "../fonts/foundation-icons/foundation-icons";
 @font-face {
-  font-family: "foundation-icons";
-  src: url("#{$font-path}.eot");
-  src: url("#{$font-path}.eot?#iefix") format("embedded-opentype"),
-       url("#{$font-path}.woff") format("woff"),
-       url("#{$font-path}.ttf") format("truetype"),
-       url("#{$font-path}.svg#fontcustom") format("svg");
-  font-weight: normal;
-  font-style: normal;
+    font-family: "foundation-icons";
+    src: url("#{$font-path}.eot");
+    src: url("#{$font-path}.eot?#iefix") format("embedded-opentype"),
+    url("#{$font-path}.woff") format("woff"),
+    url("#{$font-path}.ttf") format("truetype"),
+    url("#{$font-path}.svg#fontcustom") format("svg");
+    font-weight: normal;
+    font-style: normal;
 }
-
 @import "../etc/fonts/foundation-icons/foundation-icons.css";
-
 // mixins
 // BEM selectors mixin
 @mixin e($element) {
-  &__#{$element} {
-    @content;
-  }
+    &__#{$element} {
+        @content;
+    }
 }
 @mixin m($modifier) {
-  &--#{$modifier} {
-    @content;
-  }
+    &--#{$modifier} {
+        @content;
+    }
 }
-
 //variables
-$likert-colors: (
-  green: map-get($foundation-palette, success),
-  darkgreen: darken(map-get($foundation-palette, success), 15),
-  yellow: map-get($foundation-palette, warning),
-  red: map-get($foundation-palette, alert),
-  darkred: darken(map-get($foundation-palette, alert), 15),
-  gray: $medium-gray
-);
-
+$likert-colors: ( green: map-get($foundation-palette,
+success),
+darkgreen: darken(map-get($foundation-palette,
+success),
+15),
+yellow: map-get($foundation-palette,
+warning),
+red: map-get($foundation-palette,
+alert),
+darkred: darken(map-get($foundation-palette,
+alert),
+15),
+gray: $medium-gray);
+//customer vars
 $brand-primary: dodgerblue;
 $brand-secondary: blueviolet;
 $brand-copy: #495058;
 $brand-copy-light: #f7f7f7;
-
+$client-logo: url('');
+//foundation vars
+//Top Bar
 $topbar-background: $brand-primary;
-
 //Switch
 $switch-background-active: $brand-primary;
 $switch-margin: 0;
 //$switch-paddle-offset: 0;
-
-fieldset {
-  @extend .row;
-  padding: .5em 0 !important;
-  max-width: 100% ;
-  margin: 0 !important;
+fieldset,
+.field-row {
+    @extend .row;
+    padding: 0 0 !important;
+    max-width: 100%;
+    margin: 0 !important;
+    color: red !important;
 }
-label, legend {
-  font-size: .875em;
-  margin: 0;
-}
-
+label,
 legend {
-  margin-bottom: 0;
-//  color: map-get($foundation-palette, success);
+    font-size: .875em;
+    margin: 0;
 }
-
-input, textarea {
-  margin-bottom: 0 !important;
+legend {
+    margin-bottom: 0;
+    //  color: map-get($foundation-palette, success);
 }
-
+input,
+textarea,
+select {
+    margin-bottom: 0 !important;
+}
 //.container {
 //  max-width: 960px;
 //}
-
 .top-bar {
-  background-color: $brand-primary;
-  margin-bottom: 0;
-  color: white;
-  .subheader {
-    color: $light-gray;
-    line-height: 1;
-  }
+    background-color: $brand-primary;
+    margin-bottom: 0;
+    color: white;
+    .subheader {
+        color: $light-gray;
+        line-height: 1;
+    }
 }
-
 .sd-profile-text {
-  background: lighten($light-gray, 7);
-//  box-shadow: 0 3px 3px rgba(0,0,0,.5);
+    background: lighten($light-gray, 7);
+    //  box-shadow: 0 3px 3px rgba(0,0,0,.5);
 }
-
 .form-container {
-  border: 2px solid $brand-primary;
-  margin-top: 2em;
+    border: 2px solid $brand-primary;
+    margin-top: 2em;
 }
-
 .header-logo {
-  padding: .5em;
+    padding: .5em;
 }
-
 .text-header {
-  background: $brand-primary;
-  color: white;
-  line-height: 1;
-  padding: .5em 0;
-  h5 {
-    // add rule to decrease size of font to 90% on devices medium or smaller
-//    margin: .5em 0;
-  }
-  .response {
-//    max-width: 7em;
-    font-size: .875em !important;
-  }
+    background: $brand-primary;
+    color: white;
+    line-height: 1;
+    padding: .5em 0;
+    h5 {
+        // add rule to decrease size of font to 90% on devices medium or smaller
+        //    margin: .5em 0;
+    }
+    .response {
+        //    max-width: 7em;
+        font-size: .875em !important;
+    }
 }
-
 .response-label {
-//  @extend .show-for-small-only;
-//  @extend .show-for-sr;
-//  @include breakpoint(medium) {
-//    position: absolute !important;
-//    width: 0;
-//    height: 0;
-//    overflow: hidden;
-//    clip: rect(0, 0, 0, 0);
-//  }
+    //  @extend .show-for-small-only;
+    //  @extend .show-for-sr;
+    //  @include breakpoint(medium) {
+    //    position: absolute !important;
+    //    width: 0;
+    //    height: 0;
+    //    overflow: hidden;
+    //    clip: rect(0, 0, 0, 0);
+    //  }
 }
-
 .parent-group-desc {
-  text-align: center;
-  margin: 1em 0;
-  padding-top: 1em;
-  font-size: 1.5em;
-  border-top: 1px solid lightgray;
-  color: $brand-primary;
+    text-align: center;
+    margin: 1em 0;
+    padding-top: 1em;
+    font-size: 1.5em;
+    border-top: 1px solid lightgray;
+    color: $brand-primary;
 }
-
 .response {
-  box-sizing: border-box;
-//  min-width: 4em;
-  max-width: 4em;
-  padding: 0 .25em;
-//  margin: .125em;
-  font-size: 1rem;
-  line-height: 1;
-  & label {
-    line-height: 1.25;
-  }
-  &:last-of-type {
-    @include breakpoint(medium) {
-      margin-right: .375rem;
-      align-self: flex-end;
-      align-content: flex-end;
-      align-items: flex-end;
+    //	box-sizing: border-box;
+    min-width: 4em;
+    max-width: 6em;
+    padding: 0 .25em;
+    margin: .125em;
+    font-size: 1rem;
+    line-height: 1;
+    & label {
+        line-height: 1.25;
     }
-    // need to check this out for vertical radio label
-//    &.vertical-label {
-//      margin: 0;
-//    }
-  }
+    i {
+        color: $brand-primary;
+    }
+    &:last-of-type {
+        @include breakpoint(medium) {
+            margin-right: .375rem;
+            //      align-self: flex-end;
+            //      align-content: flex-end;
+            //      align-items: flex-end;
+        }
+        // need to check this out for vertical radio label
+        //    &.vertical-label {
+        //      margin: 0;
+        //    }
+    }
 }
-
 .colored-likert {
-  @each $color, $likert-color in $likert-colors {
-  &--#{$color} {
-    color: $likert-color;
-    background: none !important;
-    @include breakpoint(medium) {
-      background: $likert-color !important;
-      color: white;
-      display: inline-block;
-      padding: 0.25rem 0.5rem;
-//      margin: -.5rem;
-      font-size: .9em;
-      line-height: 1;
-//      white-space: normal;
-//      cursor: default;
-      border-radius: 0;
-      flex-wrap: wrap;
-      }
+    @each $color,
+    $likert-color in $likert-colors {
+        &--#{$color} {
+            color: $likert-color;
+            background: none !important;
+            @include breakpoint(medium) {
+                background: $likert-color !important;
+                color: white;
+                display: inline-block;
+                padding: 0.25rem 0.5rem;
+                //      margin: -.5rem;
+                font-size: .9em;
+                line-height: 1;
+                //      white-space: normal;
+                //      cursor: default;
+                border-radius: 0;
+                flex-wrap: wrap;
+            }
+        }
     }
-  }
 }
-
-.question-row  {
-  padding: .5em 0;
-  &:nth-of-type(even) {
-    background: #f5f5f5;
-  }
+.question-row {
+    padding: .5em 0;
+    &:nth-of-type(even) {
+        background: #f5f5f5;
+    }
 }
 .question {
-  line-height: 1;
-  margin-bottom: 1em;
-  @include breakpoint(medium) {
-    margin-bottom: 0;
-  }
+    line-height: 1;
+    margin-bottom: 1em;
+    @include breakpoint(medium) {
+        margin-bottom: 0;
+    }
 }
-
-
 //.question-row  {
 //  padding: .5em 0;
 // &:nth-of-type(2n+3) {
@@ -210,7 +205,6 @@ input, textarea {
 //     }
 //   }
 //  }
-
 //.row +.text-header:nth-child(odd) {
 //  background: $brand-primary;
 //  + .question-row:nth-of-type(even) {
@@ -220,71 +214,72 @@ input, textarea {
 //    }
 //  }
 //}
-
-
-
 .required:after {
-  display: inline;
-  position: relative;
-  content: "*";
-  color: coral;
-  font-size: 140%;
-  line-height: 0;
-  margin: 0 0 0 .125em;
+    display: inline;
+    position: relative;
+    content: "*";
+    color: coral;
+    font-size: 120%;
+    line-height: 1;
+    margin: 0;
+    top: .125em;
 }
-
 .question-number {
-//  padding-right: 0;
-  width: 2.5em !important;
+    padding-right: 0;
+    width: 2.5em !important;
+    @extend .align-stretch;
 }
 .question-description {
-  padding-left: 0;
-  margin-left: 0;
+    //	padding-left: 0;
+    //	margin-left: 0;
+    line-height: 1.5;
 }
-
 .response-label {
-  font-size: 75%;
-//  line-height: 1.375;
+    font-size: 75%;
+    display: block;
+    //  line-height: 1.375;
 }
-
 .long-text-input {
-  min-height: 7em;
-  margin-bottom: 0;
+    min-height: 7em;
+    margin-bottom: 0;
 }
-
 option[selected] .select-paceholder {
-  color: #cacaca !important;
+    color: #cacaca !important;
 }
-
 .styled-radio input {
-  position: relative;
-  width: 1.5em;
-  height: 1.5em;
-//  display: none;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  &:before {
-    opacity: 1;
-    content: '';
-    position: absolute;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    //  display: none;
     top: 0;
     right: 0;
     bottom: 0;
-//    left: -.75em;
     left: 0;
-    margin: auto;
-//    height: 1.5em;
-//    width: 1.5em;
-    border: 2px solid $brand-primary;
-    background: white;
-    border-radius: 50%;
-    @include breakpoint(medium)
-  }
-  &:checked:before {
-    background: $brand-primary;
-  }
+    &:before {
+        font-family: FontAwesome;
+        opacity: 1;
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        //    left: -.75em;
+        left: 0;
+        margin: auto;
+        //    height: 1.5em;
+        //    width: 1.5em;
+        border: 2px solid $brand-primary;
+        background: white;
+        border-radius: 50%;
+        @include breakpoint(medium)
+    }
+    &:checked:before {
+        background: $brand-primary;
+        content: '\f00c';
+        color: white;
+        text-indent: .125em;
+        line-height: 1.25;
+    }
 }
 //
 //.styled-checkbox {
@@ -326,125 +321,132 @@ option[selected] .select-paceholder {
 //    }
 //  }
 //}
-
 .styled-checkbox input {
     position: relative;
     height: 1.5em;
     width: 1.5em;
-//    top: 0;
-//    right: 0;
-//    bottom: 0;
-//    left: 0;
-//    @include vertical-center;
+    //    top: 0;
+    //    right: 0;
+    //    bottom: 0;
+    //    left: 0;
+    //    @include vertical-center;
     &:before {
-      @include vertical-center;
-      font-family: FontAwesome;
-      content: "";
-      opacity: 1;
-//      content: "";
-      position: absolute;
-      display: block;
-//      margin: auto;
-      height: 1.5em;
-      width: 1.5em;
-      border: 2px solid $brand-primary;
-      background: white;
-      border-radius: .25em;
+        @include vertical-center;
+        font-family: FontAwesome;
+        content: "";
+        opacity: 1;
+        //      content: "";
+        position: absolute;
+        display: block;
+        //      margin: auto;
+        height: 1.5em;
+        width: 1.5em;
+        border: 2px solid $brand-primary;
+        background: white;
+        border-radius: .25em;
     }
     &:checked:before {
-      background: $brand-primary;
-//      content: "\2716"; //characters found at http://www.w3schools.com/charsets/ref_utf_dingbats.asp
-      text-indent: .125em;
-      content: "\f00c";
-      color: white;
-      line-height: 1.25;
+        background: $brand-primary;
+        //      content: "\2716"; //characters found at http://www.w3schools.com/charsets/ref_utf_dingbats.asp
+        text-indent: .125em;
+        content: "\f00c";
+        color: white;
+        line-height: 1.25;
     }
-  }
-
-.vertical-list  {
-  margin: 0;
-//  margin-left: 2em !important;
-//  .styled-radio input:before {
-//    left: 0;
-//  }
-//  .check-on-view {
-//    float: left;
-//  }
-  li {
-//    @include flex-grid-row(nest, 100%, null, false, 0);
-    margin-bottom: .5em;
-  }
-//  .response-label {
-//    margin-left: 0;
-//  }
-  @include breakpoint(medium) {
-//    margin-left: .75em !important;
-    padding-left: .125em;
-    .styled-radio {
-      margin-left: -.125em;
-    }
-    .response-label {
-      margin-left: 0;
-    }
-  }
 }
-
+.vertical-list {
+    margin: 0;
+    //  margin-left: 2em !important;
+    //  .styled-radio input:before {
+    //    left: 0;
+    //  }
+    //  .check-on-view {
+    //    float: left;
+    //  }
+    li {
+        //    @include flex-grid-row(nest, 100%, null, false, 0);
+        margin-bottom: .5em;
+    }
+    //  .response-label {
+    //    margin-left: 0;
+    //  }
+    @include breakpoint(medium) {
+        //    margin-left: .75em !important;
+        padding-left: .125em;
+        .styled-radio {
+            margin-left: -.125em;
+        }
+        .response-label {
+            margin-left: 0;
+        }
+    }
+}
 .vertical-list-view {
-  margin-left: 0 !important;
-  text-indent: 0 !important;
+    margin-left: 0 !important;
+    text-indent: 0 !important;
 }
-
 .sd-submit-button {
-  margin-top: 1em !important;
+    margin-top: 1em !important;
 }
-
 .switch {
-  margin: .375em 0 0 -.125em;
-//  background: map-get($foundation-palette, success);
+    margin: .375em 0 0 -.125em;
+    //  background: map-get($foundation-palette, success);
 }
-
 .switch-paddle {
-  margin-bottom: 0!important;
+    margin-bottom: 0!important;
 }
-
-.check-on-view, .check-off-view  {
-//  color: $brand-primary;
-  font-size: 140%;
-  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
-  +.response-label {
-    margin-left: 0;
-  }
-//  &.row {
-//    min-height: 2em !important;
-//    min-width: 5rem; //workaround for final column on instructor supplied questions
-//    box-sizing: border-box;
-//    border: 1px solid black;
-//  }
+.switch-paddle::after {
+    font-family: FontAwesome;
+    content: \f00c;
+    color: $brand-primary;
 }
-
+.check-on-view,
+.check-off-view {
+    //  color: $brand-primary;
+    font-size: 140%;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    +.response-label {
+        margin-left: 0;
+    }
+    //  &.row {
+    //    min-height: 2em !important;
+    //    min-width: 5rem; //workaround for final column on instructor supplied questions
+    //    box-sizing: border-box;
+    //    border: 1px solid black;
+    //  }
+}
 .check-on-view {
-  color: $brand-primary;
+    color: $brand-primary;
 }
 .check-off-view {
-  color: darken($brand-copy-light, 10);
+    color: darken($brand-copy-light, 10);
 }
-
 .view-mode-label {
-  color: lighten(#000, 50);
-  margin-bottom: 2em;
+    color: lighten(#000, 50);
+    margin-bottom: 2em;
 }
 //.view-response-text {
 //  font-family: ;
 //}
-
 //for debugging only
 .question-group-section {
-  border: 1px solid coral;
+    border: 1px solid coral;
 }
-
 .footer {
-  margin-top: 2em;
-  text-align: center;
-  background: lightgray;
-  padding: 1em;
+    margin-top: 2em;
+    text-align: center;
+    background: lightgray;
+    padding: 1em;
+}
+.callout {
+    max-width: 100% !important;
+    margin: .5em 0;
+    padding: .875em 0 0 !important;
+}
+.submitted-icon {
+    font-size: 150%;
+}
+.field-row {
+    background: blue !important;
+    background-color: blue !important;
 }
