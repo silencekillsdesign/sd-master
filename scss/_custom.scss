@@ -56,11 +56,11 @@ $switch-margin: 0;
 //$switch-paddle-offset: 0;
 fieldset,
 .field-row {
-    @extend .row;
+//    @extend .row;
     padding: 0 0 !important;
     max-width: 100%;
     margin: 0 !important;
-    color: red !important;
+//    color: red !important;
 }
 label,
 legend {
@@ -68,6 +68,7 @@ legend {
     margin: 0;
 }
 legend {
+    @extend .row;
     margin-bottom: 0;
     //  color: map-get($foundation-palette, success);
 }
