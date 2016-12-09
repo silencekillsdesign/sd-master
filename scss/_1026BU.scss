@@ -1,0 +1,325 @@
+$brand-primary: dodgerblue;
+$brand-secondary: blueviolet;
+$brand-copy: #495058;
+$brand-copy-light: #f7f7f7;
+
+$topbar-background: $brand-primary;
+
+//Switch
+$switch-background-active: $brand-primary;
+$switch-margin: 0;
+//$switch-paddle-offset: 0;
+
+
+label, legend {
+  font-size: .875em;
+  margin: 0;
+}
+
+legend {
+  margin-bottom: 0;
+}
+
+//input {
+//  &[type='text'], &[type='password'], &[type='date'], &[type='datetime'], &[type='datetime-local'], &[type='month'], &[type='week'], &[type='email'], &[type='number'], &[type='search'], &[type='tel'], &[type='time'], &[type='url'], &[type='color'] {
+//    margin-bottom: 0;
+//  }
+//}
+input, textarea {
+  margin-bottom: 0 !important;
+}
+
+//textarea, .dropdown {
+//  margin-bottom: 0;
+//}
+
+.container {
+  max-width: 960px;
+}
+
+.top-bar {
+  background-color: $brand-primary;
+  margin-bottom: 0;
+  color: white;
+}
+
+.sd-course-info, .sd-prof-info {
+  color: $brand-copy-light !important;
+//  small {
+//    color: darken($brand-copy-light, 10);
+//  }
+}
+
+.sd-profile-text {
+  background: $brand-copy-light;
+}
+
+.form-container {
+  border: 2px solid $brand-primary;
+  margin-top: 2em;
+}
+
+.header-logo {
+  padding: .5em;
+}
+
+.text-header {
+  background: $brand-primary;
+  color: white;
+  line-height: 1;
+  padding: .5em 0;
+  h5 {
+    // add rule to decrease size of font to 90% on devices medium or smaller
+//    margin: .5em 0;
+  }
+  .response {
+    font-size: .875em !important;
+  }
+}
+
+.parent-group-desc {
+  text-align: center;
+  margin: 1em 0;
+  padding-top: 1em;
+  font-size: 1.5em;
+  border-top: 1px solid lightgray;
+  color: $brand-primary;
+}
+
+.response {
+  max-width: 5em;
+  padding: 0 .25em;
+  margin: .125em;
+//  font-size: 1rem;
+  & label {
+    line-height: 1.25;
+  }
+  &:last-of-type {
+    @include breakpoint(medium) {
+      margin-right: .375rem;
+    }
+    // need to check this out for vertical radio label
+//    &.vertical-label {
+//      margin: 0;
+//    }
+  }
+}
+
+.question-row  {
+  padding: .5em 0;
+  &:nth-of-type(even) {
+    background: #f5f5f5;
+  }
+}
+
+
+//.question-row  {
+//  padding: .5em 0;
+// &:nth-of-type(2n+3) {
+//    background: #f5f5f5;
+//   +.text-header {
+//     &:nth-of-type(2n+2) {
+//       background: white;
+//       }
+//     }
+//   }
+//  }
+
+//.row +.text-header:nth-child(odd) {
+//  background: $brand-primary;
+//  + .question-row:nth-of-type(even) {
+//    background: lighten(red, 20);
+//    ~.question-row:nth-of-type(odd) {
+//      background: lighten(blue, 20);
+//    }
+//  }
+//}
+
+
+
+.required:after {
+  display: inline;
+  position: relative;
+  content: "*";
+  color: coral;
+  font-size: 140%;
+  line-height: 0;
+  margin: 0 0 0 .125em;
+}
+
+.question-number {
+//  padding-right: 0;
+  width: 2.5em !important;
+}
+.question-description {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.response-label {
+  font-size: 75%;
+//  line-height: 1.375;
+}
+
+.long-text-input {
+  min-height: 7em;
+  margin-bottom: 0;
+}
+
+option[selected] .select-paceholder {
+  color: #cacaca !important;
+}
+
+.styled-radio input {
+  position: relative;
+  width: 1.5em;
+  height: 1.5em;
+//  display: none;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  &:before {
+    opacity: 1;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+//    left: -.75em;
+    left: 0;
+    margin: auto;
+    height: 1.5em;
+    width: 1.5em;
+    border: 2px solid $brand-primary;
+    background: white;
+    border-radius: 50%;
+    @include breakpoint(medium)
+  }
+  &:checked:before {
+    background: $brand-primary;
+  }
+}
+
+.styled-checkbox {
+  line-height: 1.25em;
+//  label {
+//    margin-left: 0;
+//  }
+  input {
+    position: relative;
+    height: 1.5em;
+    width: 1.5em;
+    top: 0;
+    right: 0;
+    bottom: 0;
+//    left: 0;
+    &:before {
+      opacity: 1;
+      content: "";
+      position: absolute;
+      display: block;
+
+      margin: auto;
+      height: 1.5em;
+      width: 1.5em;
+      border: 2px solid $brand-primary;
+      background: white;
+      border-radius: 0;
+    }
+    &:checked:before {
+      background: $brand-primary;
+      content: "\2716"; //characters found at http://www.w3schools.com/charsets/ref_utf_dingbats.asp
+      text-indent: .2em;
+      color: white;
+      line-height: 1.25;
+    }
+  }
+}
+
+.vertical-list  {
+  margin: 0;
+  margin-left: 2em !important;
+//  .styled-radio input:before {
+//    left: 0;
+//  }
+//  .check-on-view {
+//    float: left;
+//  }
+  li {
+    @include flex-grid-row(nest, 100%, null, false, 0);
+    margin-bottom: .5em;
+  }
+//  .response-label {
+//    margin-left: 0;
+//  }
+  @include breakpoint(medium) {
+    margin-left: .75em !important;
+    padding-left: .125em;
+    .styled-radio {
+      margin-left: -.125em;
+    }
+    .response-label {
+      margin-left: 0;
+    }
+  }
+}
+
+.vertical-list-view {
+  margin-left: 0 !important;
+  text-indent: 0 !important;
+}
+
+.sd-submit-button {
+  margin-top: 1em !important;
+}
+
+.switch {
+  margin: .375em 0 0 -.125em;
+}
+
+.switch-paddle {
+  margin-bottom: 0!important;
+}
+
+.check-on-view, .check-off-view  {
+//  color: $brand-primary;
+  font-size: 140%;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  +.response-label {
+    margin-left: 0;
+  }
+//  &.row {
+//    min-height: 2em !important;
+//    min-width: 5rem; //workaround for final column on instructor supplied questions
+//    box-sizing: border-box;
+//    border: 1px solid black;
+//  }
+}
+
+.check-on-view {
+  color: $brand-primary;
+}
+.check-off-view {
+  color: darken($brand-copy-light, 10);
+}
+
+.view-mode-label {
+  color: lighten(#000, 50);
+  margin-bottom: 2em;
+}
+//.view-response-text {
+//  font-family: ;
+//}
+
+//for debugging only
+.question-group-section {
+  border: 1px solid coral;
+}
+
+.footer {
+  margin-top: 2em;
+  text-align: center;
+  background: lightgray;
+  padding: 1em;
+}
